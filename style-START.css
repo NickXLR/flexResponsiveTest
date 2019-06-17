@@ -1,0 +1,208 @@
+/* Some CSS Setup - nothing to do with flexbox */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-image: linear-gradient(260deg, #1297c6 0%, #9ed4ea 100%);
+}
+
+a {
+  color:white;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-decoration: none;
+  background:rgba(0, 18, 59, 0.2);
+  padding:20px 5px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  transition:all 0.5s;
+}
+
+a:hover {
+  background:rgba(0,0,0,0.3);
+}
+
+form.signup{
+  display:flex;
+  flex-direction: column;
+  padding:1.5rem;
+}
+form.signup input{
+  margin:5px;
+  padding:10px;
+  border:0;
+}
+
+
+img {
+  width:100%;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+}
+
+section, footer {
+  text-align: center;
+  background:rgba(0,0,0,0.2);
+  padding:20px;
+  margin:20px 0;
+  color:white;
+  font-weight: 100;
+}
+
+/* Flex Container */
+.flex-nav ul {
+  border:1px solid black;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display:none;
+  flex-wrap: wrap;
+}
+
+.flex-nav ul.open{
+  display: flex;
+  border:1px solid black;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+
+}
+/* Flex Item */
+.flex-nav li{
+  flex-basis: 100%;
+}
+.flex-nav li.social{
+  flex-basis: 25%;
+}
+
+.flex-nav{
+  order: 1;
+}
+
+.wrapper > .top{
+  order: 2;
+}
+
+section.details{
+  order: 3;
+}
+
+section.signup{
+  order: 4;
+}
+
+section.hero{
+  order: 5;
+}
+footer{
+  order: 6;
+}
+
+
+@media all and (min-width:550px) {
+  .flex-nav ul.open{
+    display: flex;
+    border:1px solid black;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .flex-nav li{
+    flex-basis: 50%;
+  }
+  .flex-nav li.social{
+    flex-basis: 25%;
+  }
+
+  form.signup{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:1.5rem;
+  }
+
+  .wrapper > .top{
+    order: 1;
+  }
+
+  .flex-nav{
+    order: 2;
+  }
+
+  section.hero{
+    order: 3;
+  }
+
+  section.details{
+    order: 4;
+  }
+
+  section.signup{
+    order: 5;
+  }
+
+  footer{
+    order: 6;
+  }
+}
+@media all and (min-width:900px) {
+
+
+
+  .flex-nav ul{
+    border:1px solid black;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-wrap: nowrap;
+  }
+  .flex-nav > .toggleNav{
+    display: none;
+
+  }
+
+  .flex-nav li{
+    flex: 3;
+  }
+  .flex-nav li.social{
+    flex: 1;
+  }
+
+  .signup{
+    display: none;
+  }
+
+  .wrapper > .top{
+    order: 1;
+  }
+
+  .flex-nav{
+    order: 2;
+  }
+
+  section.hero{
+    order: 3;
+  }
+
+  section.details{
+    order: 4;
+  }
+
+}
+
+
